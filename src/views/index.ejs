@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Page</title>
+	<style>
+		div {
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<% if(locals.data) { %>
+
+		<p> Hola <%= data.name %> , elegiste el color:<%= data.color %>, tu email es: <%= data.email %>
+			 y tu edad es: <%= data.age %></p>
+
+		<% } %>
+	<form action="/" method="POST">
+		<div>
+			<label for="name">Ingrese su nombre</label>
+			<input type="text" name="name" required>
+		</div>
+		<div>
+			<label for="color">Seleccione un color</label>
+			<select name="color" required>
+				<option value="">Elegí un color</option>
+				<option value="yellow">Amarillo</option>
+				<option value="blue">Azul</option>
+				<option value="red">Rojo</option>
+				<option value="green">Verde</option>
+			</select>
+		</div>
+		<div>
+			<label for="email">Ingrese su email</label>
+			<input type="text" name="email" required>
+		</div>
+		<div>
+			<label for="age">Ingrese su edad</label>
+			<input type="text" name="age">
+		</div>
+		<div>
+			<label for="recordar_color">Recordar color</label>
+			<input type="checkbox" name="recordar_color" id="recordar_color">
+		</div>
+		<button type="submit">Enviar</button>
+	</form>
+</body>
+</html>
